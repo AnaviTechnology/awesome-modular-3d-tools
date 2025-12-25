@@ -2,6 +2,9 @@
 
 A curated collection of open-source, modular 3D-printed tools and accessories for makers, desks, and workshops.
 
+* [Parametric USB and USB-C Holder](https://makerworld.com/en/models/2155993-parametric-usb-and-usb-c-holder)
+* [Parametric Tweezers Holder](https://makerworld.com/en/models/2116427-parametric-tweezers-holder)
+
 # License
 
 The project is released under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
