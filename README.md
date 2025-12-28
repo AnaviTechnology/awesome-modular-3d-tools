@@ -2,6 +2,7 @@
 
 A curated collection of open-source, modular 3D-printed tools and accessories for makers, desks, and workshops.
 
+* [Configurable Universal ThinkPad Docking Stand](https://makerworld.com/en/models/2166733-configurable-universal-thinkpad-docking-stand)
 * [Parametric USB and USB-C Holder](https://makerworld.com/en/models/2155993-parametric-usb-and-usb-c-holder)
 * [Parametric Tweezers Holder](https://makerworld.com/en/models/2116427-parametric-tweezers-holder)
 
