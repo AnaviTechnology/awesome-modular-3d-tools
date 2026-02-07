@@ -1,5 +1,5 @@
 // ------------------ Parameters ------------------
-outer_radius = 20;          // mm
+outer_radius = 30;          // mm
 wall_thickness = 1;         // mm
 bar_thickness = 1;          // mm (radial)
 bar_width = 1;              // mm (circumferential)

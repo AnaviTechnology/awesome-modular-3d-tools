@@ -1,5 +1,5 @@
 // ------------------ Parameters ------------------
-outer_radius = 21;          // mm
+outer_radius = 31;          // mm
 wall_thickness = 1;         // mm
 height = 5;                // mm
 
