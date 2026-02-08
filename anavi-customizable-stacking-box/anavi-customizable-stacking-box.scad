@@ -8,9 +8,9 @@ $fn = 64;              // smooth corners
 
 
 // Case
-case_width = 160;
-case_lenght = 120;
-case_height = 80;
+case_width = 100;
+case_length = 50;
+case_height = 20;
 
 border_height = 2;
 
@@ -34,6 +34,8 @@ segments = 64;
 
 net = false;
 
+open = false;
+
 // ========================
 // Case Top Module
 // ========================
@@ -46,21 +48,23 @@ module case_top() {
             // Outer shell (walls included)
             linear_extrude(height = case_height)
                 rounded_rect(case_width,
-                             case_lenght,
+                             case_length,
                              corner_r);
 
             // Main hollow interior
             translate([wall_thickness, wall_thickness, border_height+0.5])
                 linear_extrude(height = case_height-2)
-                    rounded_rect(case_width-2*wall_thickness, case_lenght-2*wall_thickness, corner_r);
+                    rounded_rect(case_width-2*wall_thickness, case_length-2*wall_thickness, corner_r);
             
             border_top();
             
             border_bottom();
             
             // Open one of the sides
-            translate([0, -corner_r, border_height+0.5])
-                cube([case_width-2*corner_r,wall_thickness+1,case_height-border_height-0.5]);
+            if ( true == open) {
+                translate([0, -corner_r, border_height+0.5])
+                    cube([case_width-2*corner_r,wall_thickness+1,case_height-border_height-0.5]);
+            }
             
             // Net
             if (true == net) {
@@ -68,7 +72,7 @@ module case_top() {
                 gap = 2;
                 pitch = cube_size + gap;
                 matrix_x  = (case_width - 2*corner_r) / pitch;
-                matrix_y  = (case_lenght - 2*corner_r) / pitch;
+                matrix_y  = (case_length - 2*corner_r) / pitch;
                 start_pos = gap/2;
                 for (x = [0 : matrix_x-1]) {
                     for (y = [0 : matrix_y-1]) {
@@ -86,10 +90,10 @@ module border_top() {
         // Top hollow interior
         translate([0, 0, case_height-2])
             linear_extrude(height = border_height)
-                rounded_rect(case_width, case_lenght, corner_r);
+                rounded_rect(case_width, case_length, corner_r);
         translate([1, 1, case_height-2])
             linear_extrude(height = border_height)
-                rounded_rect(case_width-2, case_lenght-2, corner_r);
+                rounded_rect(case_width-2, case_length-2, corner_r);
         
     }
 }
@@ -99,10 +103,10 @@ module border_bottom() {
         // Top hollow interior
         translate([1, 1, 0])
             linear_extrude(height = border_height)
-                rounded_rect(case_width-2, case_lenght-2, corner_r);
+                rounded_rect(case_width-2, case_length-2, corner_r);
         translate([2, 2, 0])
             linear_extrude(height = border_height)
-                rounded_rect(case_width-4, case_lenght-4, corner_r);
+                rounded_rect(case_width-4, case_length-4, corner_r);
         
     }
 }
@@ -166,7 +170,7 @@ if (1 < len(ratios)) {
         ])
             cube([
                 wall_thickness,
-                case_lenght - 2,
+                case_length - 2,
                 wall_height
             ]);
     }
