@@ -8,8 +8,8 @@ $fn = 64;              // smooth corners
 
 
 // Case
-case_width = 160;
-case_lenght = 120;
+case_width = 100;
+case_lenght = 50;
 case_height = 2.5;
 
 border_height = 2;
