@@ -9,7 +9,7 @@ $fn = 64;              // smooth corners
 
 // Case
 case_width = 100;
-case_lenght = 50;
+case_length = 50;
 case_height = 2.5;
 
 border_height = 2;
@@ -46,7 +46,7 @@ module case_top() {
             // Outer shell (walls included)
             linear_extrude(height = case_height)
                 rounded_rect(case_width,
-                             case_lenght,
+                             case_length,
                              corner_r);
             
             border_bottom();
@@ -59,10 +59,10 @@ module border_bottom() {
         // Top hollow interior
         translate([1, 1, 0])
             linear_extrude(height = border_height)
-                rounded_rect(case_width-2, case_lenght-2, corner_r);
+                rounded_rect(case_width-2, case_length-2, corner_r);
         translate([2, 2, 0])
             linear_extrude(height = border_height)
-                rounded_rect(case_width-4, case_lenght-4, corner_r);
+                rounded_rect(case_width-4, case_length-4, corner_r);
         
     }
 }
@@ -126,7 +126,7 @@ if (1 < len(ratios)) {
         ])
             cube([
                 wall_thickness,
-                case_lenght - 2,
+                case_length - 2,
                 wall_height
             ]);
     }
